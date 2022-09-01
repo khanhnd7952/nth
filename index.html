@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Page Title</title>
+  <meta charset="utf-8" />
+  <title>Takuya Matsuyama - Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="preload" href="./images/bg01.jpg" as="image" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      VANTA.BIRDS({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundAlpha: 0.0,
+        color2: 0xff00f0,
+        wingSpan: 40.00,
+        separation: 100.00,
+        alignment: 77.00,
+        cohesion: 5.00,
+        quantity: 1.00
+      })
+
+      setTimeout(() => {
+        const main = document.querySelector('main')
+        main.style.opacity = 1
+        main.style.filter = 'blur(0px)'
+      }, 1000)
+    })
+  </script>
 </head>
+
 <body>
+  <div id="vanta"></div>
+  <main class="animated">
+    <header>
+      <img src="./images/takuya.jpg" />
+      <h1>@craftzdog</h1>
+    </header>
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/khasnhmefo2k7/">
+          <img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/facebook_icon_130940.png" alt="Facebook"
+            width="20" />
+          Facebook
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/craftzdog">
+          <img src="./images/github.svg" alt="GitHub" width="20" />
+          GitHub
+        </a>
+      </li>
+    </ul>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <!-- The text field -->
+    <input type="text" value="0973388297" id="myInput">
 
+    <!-- The button used to copy the text -->
+    <button onclick="myFunction()">Copy text</button>
+
+    <script>
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
+    </script>
+
+  </main>
 </body>
+
 </html>
